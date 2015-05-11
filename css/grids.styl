@@ -1,0 +1,134 @@
+/*
+ *	Sizes stipulated for Responsive Design
+ */
+SMALL-GRID 	= 	480px
+MEDIUM-GRID = 	768px
+LARGE-GRID 	= 	1024px
+
+.row
+	margin 		0 auto
+	width 		90%
+	overflow 	hidden
+
+.column
+	background 		lightblue
+	box-sizing 		border-box
+	float 			left
+	margin-right 	2%
+	padding 		1em 0
+	width 			100%
+
+@media screen and (min-width: SMALL-GRID)
+	.four-columns, .six-columns
+		.column
+			width 49%
+	
+	.four-columns, six-columns
+		.column:nth-child(2n)
+			margin-right 0
+			
+	.twelve-columns
+		.column
+			width 32%
+	
+	.twelve-columns
+		.column:nth-child(3n)
+			margin-right 0
+
+@media screen and (min-width: MEDIUM-GRID)
+	.three-columns
+		.column
+			width 32%
+	
+	.three-columns
+		.column:nth-child(3n)
+			margin-right 0
+	
+	.six-columns
+		.column
+			width 	15%
+	
+	.six-columns
+		.column:nth-child(2n)
+			margin-right 2%
+	
+	.six-columns
+		.column:nth-child(6n)
+			margin-right 0
+			
+	.twelve-columns
+		.column
+			width 23.5%
+	
+	.twelve-columns
+		.column:nth-child(3n)
+			margin-right 2%
+	
+	.twelve-columns
+		.column:nth-child(4n)
+			margin-right 0
+		
+@media screen and (min-width: LARGE-GRID)
+	.two-columns
+		.column
+			width 49%
+	.two-columns
+		.column:nth-child(2n)
+			margin-right 0
+			
+	.four-columns
+		.column
+			width 23.5%
+	
+	.four-columns
+		.column:nth-child(2n)
+			margin-right 2%
+	
+	.four-columns
+		.column:nth-child(4n)
+			margin-right 0
+
+
+
+
+
+
+
+
+
+
+// .one-columns
+// 	width 100%
+
+// .two-columns
+// 	width 50%
+
+// .three-columns
+// 	width 33.3333%
+
+// .four-columns
+// 	width 25%
+
+// .five-columns
+// 	width 20%
+
+// .six-columns
+// 	width 16.6667%
+
+// .seven-columns
+// 	width 14.2857%
+
+// .eight-columns
+// 	width 12.5%
+
+// .nine-columns
+// 	width 11.1111%
+
+// .ten-columns
+// 	width 10%
+
+// .eleven-columns
+// 	width 9.0909%
+
+// .twelve-columns
+// 	width 8.3333%

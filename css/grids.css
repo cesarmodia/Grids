@@ -1,0 +1,75 @@
+/*
+ *	Sizes stipulated for Responsive Design
+ */
+.row {
+  margin: 0 auto;
+  width: 90%;
+  overflow: hidden;
+}
+.column {
+  background: #add8e6;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 2%;
+  padding: 1em 0;
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .four-columns .column,
+  .six-columns .column {
+    width: 49%;
+  }
+  .four-columns .column:nth-child(2n),
+  six-columns .column:nth-child(2n) {
+    margin-right: 0;
+  }
+  .twelve-columns .column {
+    width: 32%;
+  }
+  .twelve-columns .column:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .three-columns .column {
+    width: 32%;
+  }
+  .three-columns .column:nth-child(3n) {
+    margin-right: 0;
+  }
+  .six-columns .column {
+    width: 15%;
+  }
+  .six-columns .column:nth-child(2n) {
+    margin-right: 2%;
+  }
+  .six-columns .column:nth-child(6n) {
+    margin-right: 0;
+  }
+  .twelve-columns .column {
+    width: 23.5%;
+  }
+  .twelve-columns .column:nth-child(3n) {
+    margin-right: 2%;
+  }
+  .twelve-columns .column:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .two-columns .column {
+    width: 49%;
+  }
+  .two-columns .column:nth-child(2n) {
+    margin-right: 0;
+  }
+  .four-columns .column {
+    width: 23.5%;
+  }
+  .four-columns .column:nth-child(2n) {
+    margin-right: 2%;
+  }
+  .four-columns .column:nth-child(4n) {
+    margin-right: 0;
+  }
+}
