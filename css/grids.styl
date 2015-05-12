@@ -5,130 +5,357 @@ SMALL-GRID 	= 	480px
 MEDIUM-GRID = 	768px
 LARGE-GRID 	= 	1024px
 
+MARGIN-SIDE = 	0px
+BACKGROUND-COLOR = #DFDFDF
+
+body
+	background BACKGROUND-COLOR
+
 .row
-	margin 		0 auto
-	width 		90%
+	// border 		1px solid #999
+	box-sizing 	border-box
+	margin 		1px auto
+	width 		100%
 	overflow 	hidden
 
 .column
-	background 		lightblue
+	background 		white
+	border 			MARGIN-SIDE solid BACKGROUND-COLOR
 	box-sizing 		border-box
 	float 			left
-	margin-right 	2%
+	margin 			0
 	padding 		1em 0
 	width 			100%
 
+
 @media screen and (min-width: SMALL-GRID)
-	.four-columns, .six-columns
+	/*
+	 *	
+	 */	
+	.four-columns, .six-columns, .eight-columns, .ten-columns
 		.column
-			width 49%
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(50% - %s)', (MARGIN-SIDE / 2))
 	
-	.four-columns, six-columns
-		.column:nth-child(2n)
-			margin-right 0
-			
+	.four-columns, .six-columns, .eight-columns, .ten-columns
+		.column:nth-child(even)
+			margin-left 	(MARGIN-SIDE / 2)
+			margin-right 	0
+
+	/*
+	 * 
+	 */	
 	.twelve-columns
 		.column
-			width 32%
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(33.3333% - %s)',MARGIN-SIDE)
+			
+	.twelve-columns
+		.column:nth-child(3n + 1)
+			margin-left 	0
+			width 			s('calc(33.3333% - %s)',(MARGIN-SIDE / 2))
 	
 	.twelve-columns
 		.column:nth-child(3n)
-			margin-right 0
+			margin-right 	0
+			width 			s('calc(33.3333% - %s)',(MARGIN-SIDE / 2))
 
 @media screen and (min-width: MEDIUM-GRID)
-	.three-columns
+	/*
+	 * 
+	 */
+	.six-columns
+		.column:nth-child(even)
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+
+	.three-columns, .six-columns, .nine-columns
 		.column
-			width 32%
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(33.3333% - %s)',MARGIN-SIDE)
+
+	.three-columns, .six-columns, .nine-columns
+		.column:nth-child(3n + 1)
+			margin-left 	0
+			width 			s('calc(33.3333% - %s)',(MARGIN-SIDE / 2))
 	
-	.three-columns
+	.three-columns, .six-columns, .nine-columns
 		.column:nth-child(3n)
-			margin-right 0
+			margin-right 	0
+			width 			s('calc(33.3333% - %s)',(MARGIN-SIDE / 2))
 	
-	.six-columns
-		.column
-			width 	15%
+	/*
+	 * 
+	 */
+	.twelve-columns
+		.column:nth-child(3n + 1)
+			margin-left 	(MARGIN-SIDE / 2)
+			width 			s('calc(25% - %s)',MARGIN-SIDE)
 	
-	.six-columns
-		.column:nth-child(2n)
-			margin-right 2%
-	
-	.six-columns
-		.column:nth-child(6n)
-			margin-right 0
-			
+	.twelve-columns
+		.column:nth-child(3n)
+			margin-right 	(MARGIN-SIDE / 2)
+			width 			s('calc(25% - %s)',MARGIN-SIDE)
+
 	.twelve-columns
 		.column
-			width 23.5%
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(25% - %s)',MARGIN-SIDE)
 	
 	.twelve-columns
-		.column:nth-child(3n)
-			margin-right 2%
+		.column:nth-child(4n + 1)
+			margin-left 	0
+			width 			s('calc(25% - %s)',(MARGIN-SIDE / 2))
 	
 	.twelve-columns
 		.column:nth-child(4n)
-			margin-right 0
-		
+			margin-right 	0
+			width 			s('calc(25% - %s)',(MARGIN-SIDE / 2))
+	
 @media screen and (min-width: LARGE-GRID)
+	/*
+	 * 
+	 */
 	.two-columns
 		.column
-			width 49%
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(50% - %s)', (MARGIN-SIDE / 2))
+			
 	.two-columns
-		.column:nth-child(2n)
-			margin-right 0
+		.column:nth-child(even)
+			margin-left 	(MARGIN-SIDE / 2)
+			margin-right 	0
+	
+	/*
+	 * 
+	 */
+	.four-columns
+		.column:nth-child(even)
+			margin-left 	(MARGIN-SIDE / 2)
+			margin-right 	(MARGIN-SIDE / 2)
 			
 	.four-columns
 		.column
-			width 23.5%
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(25% - %s)',MARGIN-SIDE)
 	
 	.four-columns
-		.column:nth-child(2n)
-			margin-right 2%
+		.column:nth-child(4n+1)
+			margin-left 	0
+			width 			s('calc(25% - %s)',(MARGIN-SIDE / 2))
 	
 	.four-columns
 		.column:nth-child(4n)
-			margin-right 0
+			margin-right 	0
+			width 			s('calc(25% - %s)',(MARGIN-SIDE / 2))
+	
+	/*
+	 * 
+	 */
+	.five-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(20% - %s)',MARGIN-SIDE)
+	
+	.five-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(20% - %s)',(MARGIN-SIDE / 2))
+	
+	.five-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(20% - %s)',(MARGIN-SIDE / 2))
+	
+	/*
+	 * 
+	 */
+	.six-columns
+		.column:nth-child(even)
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
 
+	.six-columns
+		.column:nth-child(3n + 1)
+			margin-left		(MARGIN-SIDE / 2)
+			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE / 2))
+	
+	.six-columns
+		.column:nth-child(3n)
+			margin-right 	(MARGIN-SIDE / 2)
+			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE / 2))
+			
+	.six-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(16.66666667% - %s)',MARGIN-SIDE)
+	
+	.six-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE / 2))
+	
+	.six-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE / 2))
+	
+	/*
+	 * 
+	 */
+	.seven-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(14.2857% - %s)',MARGIN-SIDE)
+	
+	.seven-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(14.2857% - %s)',(MARGIN-SIDE / 2))
+	
+	.seven-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(14.2857% - %s)',(MARGIN-SIDE / 2))
+			
+	/*
+	 * 
+	 */
+	.eight-columns
+		.column:nth-child(even)
+			margin-left 	(MARGIN-SIDE / 2)
+			margin-right 	(MARGIN-SIDE / 2)
+	
+	.eight-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(12.5% - %s)',MARGIN-SIDE)
+	
+	.eight-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(12.5% - %s)',(MARGIN-SIDE / 2))
+	
+	.eight-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(12.5% - %s)',(MARGIN-SIDE / 2))
+	
+	/*
+	 * 
+	 */
+	.nine-columns
+		.column:nth-child(3n + 1)
+			margin-left 	(MARGIN-SIDE / 2)
+			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 2))
+	
+	.nine-columns
+		.column:nth-child(3n)
+			margin-right 	(MARGIN-SIDE / 2)
+			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 2))
+	
+	.nine-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(11.1111% - %s)',MARGIN-SIDE)
+	
+	.nine-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 2))
+	
+	.nine-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 2))
+	
+	/*
+	 * 
+	 */
+	.ten-columns
+		.column:nth-child(even)
+			margin-left 	(MARGIN-SIDE / 2)
+			margin-right 	(MARGIN-SIDE / 2)
+	
+	.ten-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(10% - %s)',MARGIN-SIDE)
+	
+	.ten-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(10% - %s)',(MARGIN-SIDE / 2))
+	
+	.ten-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(10% - %s)',(MARGIN-SIDE / 2))
+	
+	/*
+	 * 
+	 */
+	.eleven-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(9.0909% - %s)',MARGIN-SIDE)
+	
+	.eleven-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(9.0909% - %s)',(MARGIN-SIDE / 2))
+	
+	.eleven-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(9.0909% - %s)',(MARGIN-SIDE / 2))
+	
+	/*
+	 * 
+	 */
+	.twelve-columns
+		.column:nth-child(3n + 1)
+			margin-left 	(MARGIN-SIDE / 2)
+			width 			s('calc(8.3333% - %s)',MARGIN-SIDE)
+	
+	.twelve-columns
+		.column:nth-child(3n)
+			margin-right 	(MARGIN-SIDE / 2)
+			width 			s('calc(8.3333% - %s)',MARGIN-SIDE)
 
-
-
-
-
-
-
-
-
-// .one-columns
-// 	width 100%
-
-// .two-columns
-// 	width 50%
-
-// .three-columns
-// 	width 33.3333%
-
-// .four-columns
-// 	width 25%
-
-// .five-columns
-// 	width 20%
-
-// .six-columns
-// 	width 16.6667%
-
-// .seven-columns
-// 	width 14.2857%
-
-// .eight-columns
-// 	width 12.5%
-
-// .nine-columns
-// 	width 11.1111%
-
-// .ten-columns
-// 	width 10%
-
-// .eleven-columns
-// 	width 9.0909%
-
-// .twelve-columns
-// 	width 8.3333%
+	.twelve-columns
+		.column:nth-child(4n + 1)
+			margin-left 	(MARGIN-SIDE / 2)
+			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE / 2))
+	
+	.twelve-columns
+		.column:nth-child(4n)
+			margin-right 	(MARGIN-SIDE / 2)
+			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE / 2))
+			
+	.twelve-columns
+		.column
+			margin-left		(MARGIN-SIDE / 2)
+			margin-right	(MARGIN-SIDE / 2)
+			width 			s('calc(8.3333% - %s)',MARGIN-SIDE)
+	
+	.twelve-columns
+		.column:first-child
+			margin-left 	0
+			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE / 2))
+	
+	.twelve-columns
+		.column:last-child
+			margin-right 	0
+			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE / 2))
