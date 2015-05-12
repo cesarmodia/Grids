@@ -5,7 +5,7 @@ SMALL-GRID 	= 	480px
 MEDIUM-GRID = 	768px
 LARGE-GRID 	= 	1024px
 
-MARGIN-SIDE = 	0px
+MARGIN-SIDE = 	1px
 BACKGROUND-COLOR = #DFDFDF
 
 body
@@ -14,16 +14,17 @@ body
 .row
 	// border 		1px solid #999
 	box-sizing 	border-box
-	margin 		1px auto
+	margin 		(MARGIN-SIDE / 2) auto
 	width 		100%
-	overflow 	hidden
+	// overflow 	hidden
 
 .column
 	background 		white
-	border 			MARGIN-SIDE solid BACKGROUND-COLOR
+	// border 			1px solid BACKGROUND-COLOR
+	box-shadow 		4px 4px MARGIN-SIDE 0px rgba(0,0,0,0.20)
 	box-sizing 		border-box
 	float 			left
-	margin 			0
+	margin 			(MARGIN-SIDE / 2) 0
 	padding 		1em 0
 	width 			100%
 
@@ -199,12 +200,12 @@ body
 	.six-columns
 		.column:first-child
 			margin-left 	0
-			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE / 2))
+			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE))
 	
 	.six-columns
 		.column:last-child
 			margin-right 	0
-			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE / 2))
+			width 			s('calc(16.66666667% - %s)',(MARGIN-SIDE))
 	
 	/*
 	 * 
@@ -271,12 +272,12 @@ body
 	.nine-columns
 		.column:first-child
 			margin-left 	0
-			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 2))
+			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 0.66))
 	
 	.nine-columns
 		.column:last-child
 			margin-right 	0
-			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 2))
+			width 			s('calc(11.1111% - %s)',(MARGIN-SIDE / 0.66))
 	
 	/*
 	 * 
@@ -353,9 +354,9 @@ body
 	.twelve-columns
 		.column:first-child
 			margin-left 	0
-			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE / 2))
+			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE/0.66))
 	
 	.twelve-columns
 		.column:last-child
 			margin-right 	0
-			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE / 2))
+			width 			s('calc(8.3333% - %s)',(MARGIN-SIDE/0.66))
